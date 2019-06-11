@@ -23,7 +23,9 @@
             <a class="nav-link disabled" href="#">Cosmic Sushi</a>
         </li>
     </ul>
+
     <h1>Puff.io Bugs</h1>
+
     <div class="row">
         <div class="col">
             <img width="100" height="100" src="bug_img.png" alt="bug image">
@@ -38,22 +40,26 @@
     <div class="bg-warning"><p>
             As you might know all programs have bugs. This is Puff.io's way of minimizing them!
             But we need YOUR help. When you play Puff.io please report any problems you have. We'll try to fix them!
-    </div></p>
+    </p></div>
+
     <h1 class="ml-5">Submit a bug</h1>
     <div class="row shadow pb-3 border border-success">
         <div class="col">
-            <p><b>Title</b></p>
-            <input type="text">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="title">Enter the Title of Your Bug</label>
+                    <input type="text" class="form-control" id="title" placeholder="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content of Your Bug</label>
+                    <textarea class="form-control" id="content" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-        <div class="col">
-            <p><b>Content</b></p>
-            <input type="text">
-        </div>
+
     </div>
 
-    <br>
-    <button>Submit</button>
-    <br>
     <br>
 
     <details>
