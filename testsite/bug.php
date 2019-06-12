@@ -1,13 +1,12 @@
 <?php
+include "conn.php";
 if (isset($_GET['bugid'])) {
-    echo "id exists";
     $id=$_GET['bugid'];
     #Get all data data from specific users
     $sql = "SELECT * FROM bugs WHERE id = $id";
     $st = $connection->prepare($sql);
     $st->execute();
     $bug = $st->fetch(PDO::FETCH_ASSOC);
-    echo $bug["title"];
 }
 #else {
 #    die();
@@ -24,7 +23,8 @@ if (isset($_GET['bugid'])) {
 </head>
 <body>
     <div class="container">
-        <h1>Bug <?php ?></h1>
+        <h1>Bug <?php echo $bug["title"] ?>:</h1>
+        <div class="border border-success"><p><?php echo $bug["content"] ?></p></div>
     </div>
 </body>
 </html>
