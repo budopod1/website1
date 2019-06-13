@@ -9,10 +9,11 @@ if (isset($_POST['submit'])) {
     #var_dump($_POST['email']);
 
     $title = $_POST['title'];
-    $content = $_POST['content'];
+    $content = htmlspecialchars($_POST['content']);
 
-    $sql = "INSERT INTO bugs (title, `content`) VALUES ('$title', '$content')";
-    $connection->exec($sql);
+    $sql = "INSERT INTO bugs (`title`, `content`) VALUES (:title, :content)";
+    $statement = $connection->prepare($sql);
+    $statement->execute(['title' => $title, 'content' => $content]);
 }
 $sql = "SELECT * FROM bugs";
 $st = $connection->prepare($sql);
@@ -32,20 +33,7 @@ $users = $st->fetchALL();
 
 <body>
     <div class="container">
-        <ul class="nav nav-tabs">
-            <li class="nav-item"></li>
-            <a class="nav-link active" href="#">Puff.io Bugs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Puff.io Home Page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Cosmic Sushi</a>
-            </li>
-        </ul>
+        <?php include "nav.php"?>
         <h1>Puff.io Bugs</h1>
         <div class="row">
             <div class="col">

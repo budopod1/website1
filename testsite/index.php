@@ -11,20 +11,7 @@
 <body>
     <div class="container">
     <header>
-        <ul class="nav nav-tabs">
-            <li class="nav-item"></li>
-                <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="puffBugs.php">Puff.io Bugs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Puff.io Home Page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Cosmic Sushi</a>
-            </li>
-        </ul>
+        <?php include "nav.php"?>
         <h1>Welcome to budopod.net</h1>
         <h2>Nerdy stuff for kids, developed by kids.</h2>
         <hr>

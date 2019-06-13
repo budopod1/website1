@@ -2,15 +2,30 @@
 include "conn.php";
 if (isset($_GET['bugid'])) {
     $id=$_GET['bugid'];
-    #Get all data data from specific users
+    #Get all data data from specific bug
     $sql = "SELECT * FROM bugs WHERE id = $id";
     $st = $connection->prepare($sql);
     $st->execute();
     $bug = $st->fetch(PDO::FETCH_ASSOC);
 }
-#else {
-#    die();
-#}
+if (isset($_POST["submit"])){
+    $edit=$_POST["edit"];
+
+    $prevcontent=$bug["content"];
+    $title=$bug["title"];
+
+    $newcontent=$prevcontent." EDIT: ".$edit;
+
+    $sql = "UPDATE bugs SET title = :title, content = :newcontent WHERE id=$id";
+    $statement = $connection->prepare($sql);
+    $statement->execute(['title' => $title, 'newcontent' => $newcontent]);
+
+    #Update all data data from specific bug
+    $sql = "SELECT * FROM bugs WHERE id = $id";
+    $st = $connection->prepare($sql);
+    $st->execute();
+    $bug = $st->fetch(PDO::FETCH_ASSOC);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +38,19 @@ if (isset($_GET['bugid'])) {
 </head>
 <body>
     <div class="container">
+        <?php include "nav.php"?>
         <h1>Bug <?php echo $bug["title"] ?>:</h1>
         <div class="border border-success"><p><?php echo $bug["content"] ?></p></div>
+        <br>
+        <h3>Make it more clear!</h3>
+        <h4>Edit it!</h4>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="edit">Put your edit here:</label>
+                <input type="text" class="form-control" id="edit" required name="edit">
+            </div>
+            <button name="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 </body>
 </html>
