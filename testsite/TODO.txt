@@ -20,6 +20,12 @@ Things to do:
 
 6 * Make Resolve button disapear when bug is alredy resolved = y
 
+	<======SEVERENVIORMENT======>
+
+Instructions for setting up server enviorment
+
+beta.toeverykid.org/7th/guide.php
+
 	<======KEY======>
 
 n = Not done
