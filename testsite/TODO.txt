@@ -6,6 +6,8 @@ Things to do:
 
 2 * Add way to make new admins = y
 
+3 * Made bugs order decending = y
+
 	<======FRONTEND======>
 
 1 * Add a resolved feature on specific bugs = y
@@ -19,6 +21,8 @@ Things to do:
 5 * Add ... on shortened bugs = y
 
 6 * Make Resolve button disapear when bug is alredy resolved = y
+
+7 * Made Admin Control Panel and Logout stay up when logged in = y
 
 	<======SEVERENVIORMENT======>
 
@@ -34,10 +38,10 @@ y = Done
 
 	<======OTHER======>
 
-TOTAL = 8
+TOTAL = 10
 
-DONE = 8
+DONE = 10
 
-FRACTION = 8/8=1/1=1
+FRACTION = 10/10=1/1=1
 
-OVER 1/2 by: +4/8=1/2
+OVER 1/2 by: +5/10=+1/2

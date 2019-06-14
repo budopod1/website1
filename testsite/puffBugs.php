@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $statement = $connection->prepare($sql);
     $statement->execute(['title' => $title, 'content' => $content]);
 }
-$sql = "SELECT * FROM bugs";
+$sql = "SELECT * FROM bugs ORDER BY id DESC";
 $st = $connection->prepare($sql);
 $st->execute();
 $bugs = $st->fetchALL();
@@ -58,11 +58,11 @@ $bugs = $st->fetchALL();
                 <form method="POST" action="">
                     <div class="form-group">
                         <label for="title">Enter the Title of Your Bug</label>
-                        <input type="text" class="form-control" id="title" placeholder="title" required name="title">
+                        <input type="text" class="form-control" id="title" placeholder="Title" required name="title">
                     </div>
                     <div class="form-group">
                         <label for="content">Content of Your Bug</label>
-                        <textarea class="form-control" id="content" rows="5" required name="content"></textarea>
+                        <textarea class="form-control" id="content" placeholder="Content" rows="5" required name="content"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>

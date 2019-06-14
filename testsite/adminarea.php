@@ -15,7 +15,7 @@ if (isset($_POST["submit"])){
 }
 
 #Load data from data base
-$sql = "SELECT * FROM bugs";
+$sql = "SELECT * FROM bugs ORDER BY id DESC";
 $st = $connection->prepare($sql);
 $st->execute();
 $bugs = $st->fetchALL();
@@ -100,7 +100,7 @@ if (isset($_POST['register'])) {
                 <div class="row mt-3">
                     <div class="col">
                         <?php
-                        echo $bug['title']
+                        echo "<a href=\"bug.php?bugid=".$bug['id']."\">".$bug['title']."</a>"
                         ?>
                     </div>
                     <div class="col">

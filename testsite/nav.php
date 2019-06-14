@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION)){
+session_start();
+}
+?>
 <ul class="nav nav-tabs">
     <li class="nav-item"></li>
         <a class="nav-link" href="index.php">Home</a>
@@ -12,6 +17,9 @@
     if (isset($_SESSION["loggedin"])) {?>
         <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="adminarea.php">Admin Control Panel</a>
         </li>
     <?php }?>
 </ul>
