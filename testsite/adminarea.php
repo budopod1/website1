@@ -84,6 +84,7 @@ if (isset($_POST['register'])) {
                     <div class="col"></div>
                 </div>
             </details>
+            <hr>
             <small>(Resolve button will disappear if already resolved)</small>
             <div class="row mt-3">
                 <div class="col">

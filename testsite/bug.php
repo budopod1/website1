@@ -48,7 +48,7 @@ if (isset($_POST["submit"])){
         <div class="border border-success"><p><?php echo $bug["content"] ?></p></div>
         <br>
         <h4>Resolved: <?php if ($bug["resolved"] == 0){echo "No";} else {echo "Yes";} ?></h4>
-        <br>
+        <hr>
         <h3>Make it more clear!</h3>
         <h4>Edit it!</h4>
         <form action="" method="post">
