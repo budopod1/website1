@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 $sql = "SELECT * FROM bugs";
 $st = $connection->prepare($sql);
 $st->execute();
-$users = $st->fetchALL();
+$bugs = $st->fetchALL();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,31 +81,40 @@ $users = $st->fetchALL();
                 <div class="col">
                     <p><b>Content</b></p>
                 </div>
+                <div class="col">
+                    <p><b>Resolved</b></p>
+                </div>
             </div>
             <?php
-            if ($users && $st->rowCount() > 0) {
-                foreach ($users as $user) { ?>
+            if ($bugs && $st->rowCount() > 0) {
+                foreach ($bugs as $bug) { ?>
                     <div class="row">
                         <div class="col">
                             <?php
-                            echo "<a href=\"bug.php?bugid=".$user['id']."\">".$user['title']."</a>"
+                            echo "<a href=\"bug.php?bugid=".$bug['id']."\">".$bug['title']."</a>"
                             ?>
                         </div>
                         <div class="col">
                             <?php
-                            echo substr($user['content'], 0, 20);
+                            echo substr($bug['content'], 0, 20)."...";
+                            ?>
+                        </div>
+                        <div class="col">
+                            <?php
+                            if ($bug["resolved"] == 0){
+                                echo "No";
+                            } else {
+                                echo "Yes";
+                            }
                             ?>
                         </div>
                     </div>
                 <?php
                 }
             }
-        ?>
+            ?>
         </details>
-        <hr>
-        <footer class="m-4">
-            <p>Sorry, no copy writes</p>
-        </footer>
+        <?php include "footer.php"; ?>
     </div>
 </body>
 

@@ -7,6 +7,10 @@ if (isset($_GET['bugid'])) {
     $st = $connection->prepare($sql);
     $st->execute();
     $bug = $st->fetch(PDO::FETCH_ASSOC);
+} else {
+    #No Content in $_GET
+    header("Location: puffBugs.php");
+    die();
 }
 if (isset($_POST["submit"])){
     $edit=$_POST["edit"];
@@ -26,6 +30,7 @@ if (isset($_POST["submit"])){
     $st->execute();
     $bug = $st->fetch(PDO::FETCH_ASSOC);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +47,8 @@ if (isset($_POST["submit"])){
         <h1>Bug <?php echo $bug["title"] ?>:</h1>
         <div class="border border-success"><p><?php echo $bug["content"] ?></p></div>
         <br>
+        <h4>Resolved: <?php if ($bug["resolved"] == 0){echo "No";} else {echo "Yes";} ?></h4>
+        <br>
         <h3>Make it more clear!</h3>
         <h4>Edit it!</h4>
         <form action="" method="post">
@@ -51,6 +58,7 @@ if (isset($_POST["submit"])){
             </div>
             <button name="submit" class="btn btn-primary">Submit</button>
         </form>
+        <?php include "footer.php"; ?>
     </div>
 </body>
 </html>

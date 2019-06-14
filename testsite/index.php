@@ -27,10 +27,7 @@
            </section> 
         </article>
     </main>
-    <hr class="footer">
-    <footer>
-        <p>I'd put the credits here, but there aren't any, sorry.</p>
-    </footer>
+    <?php include "footer.php"; ?>
     </div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+Things to do:
+
+	<======BACKEND======>
+
+1 * Add admin feature to resolve bugs = y
+
+2 * Add way to make new admins = y
+
+	<======FRONTEND======>
+
+1 * Add a resolved feature on specific bugs = y
+
+2 * Add resolved colum for bugs = y
+
+3 * Make admin page look better = y
+
+4 * Make add admin page look good = y
+
+5 * Add ... on shortened bugs = y
+
+6 * Make Resolve button disapear when bug is alredy resolved = y
+
+	<======KEY======>
+
+n = Not done
+
+y = Done
+
+	<======OTHER======>
+
+TOTAL = 8
+
+DONE = 8
+
+FRACTION = 8/8=1/1=1
+
+OVER 1/2 by: +4/8=1/2
