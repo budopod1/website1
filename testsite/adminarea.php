@@ -61,19 +61,22 @@ if (isset($_POST['register'])) {
                 <div class="row pt-3">
                     <div class="col"></div>
                     <div class="col border border-success p-3 pl-5 pr-5">
-                        <h1>Register</h1>
+                        <h1>New Admin</h1>
                         <form action="" method="post">
                             <div class="form-group">
                                 <label for="username">Enter Username:</label>
-                                <input type="text" name="username" id="username" placeholder="username">
+                                <br>
+                                <input class="form-control" type="text" name="username" id="username" placeholder="Username">
                             </div>
                             <div class="form-group">
                                 <label for="password">Enter Password:</label>
-                                <input type="password" name="password" id="password" placeholder="password">
+                                <br>
+                                <input class="form-control" type="password" name="password" id="password" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <label for="password2">Enter Password (Comfirm):</label>
-                                <input type="password" name="password2" id="password2" placeholder="password">
+                                <label for="password2">Enter Password (Confirm):</label>
+                                <br>
+                                <input class="form-control" type="password" name="password2" id="password2" placeholder="Password (Confirm)">
                             </div>
                             <button type="submit" class="btn btn-primary" name="register">Register</button>
                         </form>

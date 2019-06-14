@@ -12,19 +12,23 @@
 <body>
     <div class="container">
         <?php include "nav.php" ?>
-        <div class="row">
+        <div class="row mt-4 mb-5">
             <div class="col">
 
             </div>
-            <div class="col text-center">
+            <div class="col">
                 <h1>Admin Login</h1>
+                <br>
                 <form action="adminlogin.php" method="post">
                     <div class="form-group">
                         <label for="username">Enter Username:</label>
+                        <br>
                         <input type="text" name="username" id="username" placeholder="username">
                     </div>
+                    <br>
                     <div class="form-group">
                         <label for="password">Enter Password:</label>
+                        <br>
                         <input type="password" name="password" id="password" placeholder="password">
                     </div>
                     <button type="submit" class="btn btn-primary" name="login">Login</button>
