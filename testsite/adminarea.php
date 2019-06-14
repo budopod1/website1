@@ -49,13 +49,12 @@ if (isset($_POST['register'])) {
 <body>
     <div class="container">
         <?php include "nav.php" ?>
-        <h1>Admin Control Area</h1>
+        <h1>Admin Control Panel</h1>
         <h2>Welcome <?php echo $_SESSION['username'] ?></h1>
             <br>
             <?php if (isset($err)) {
                 echo "<h4>" . $err . "</h4>";
             } ?>
-            <br>
             <details class="mb-3">
                 <summary>Add new admin</summary>
                 <div class="row pt-3">

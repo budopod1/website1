@@ -31,7 +31,8 @@
                         <br>
                         <input type="password" name="password" id="password" placeholder="password">
                     </div>
-                    <button type="submit" class="btn btn-primary" name="login">Login</button>
+                    
+                    <button type="submit" class="btn btn-primary mt-3" name="login">Login</button>
                 </form>
             </div>
             <div class="col">
